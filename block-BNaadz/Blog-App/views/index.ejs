@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body class="bg">
+    <header>
+        <div class="flex header">
+            <a href="/"><h1>BLOG</h1></a>
+            <% if(user ){  %>
+             <div>
+              <a class="margin-l-20" href="">Welcome to <%= user.name %></a>
+              <a class="btn" href="/users/logout">Log out</a>
+              <a class="btn" href="/articles/new">Add Article</a>
+             </div>
+            <% }else{ %>
+              <div>
+                <a class="btn" href="/users/login">Log in</a>
+                <a class="btn" href="/users/registration">register</a>
+                </div>
+            <% } %>
+            
+        </div>
+    </header>
+
+  <div class="textalign flex-1">
+    <h1 class="margin-b-20 white">Blog App</h1>
+    <a class="btn white" href="/articles">Go To articles</a>
+  </div>
+</body>
+
+</html>

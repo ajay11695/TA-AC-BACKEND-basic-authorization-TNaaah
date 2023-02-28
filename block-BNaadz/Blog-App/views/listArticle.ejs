@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <header>
+        <div class="flex header">
+            <a href="/"><h1>Home</h1></a>
+            <% if(user){ %>
+              <div>
+                <a class="margin-l-20" href="">Welcome to <%= user.name %></a>
+                <a class="btn" href="/users/logout">Log out</a>
+                <a class="btn" href="/articles/new">Add Article</a>
+              </div>
+            <% } %>
+        </div>
+    </header>
+    <div class="container ">
+
+        <h1 class="textalign">All Articles</h1>
+        <% if(articles.length) { %>
+
+            <% articles.forEach(article=>{ %>
+                <section>
+                    <a href="/articles/<%= article._id %>">
+                        <h1 class="h-title">
+                            <%= article.title %>
+                        </h1>
+                        <p class="">
+                            <%= article.description %>
+                        </p>
+                    </a>
+                </section>
+                <% }) %>
+
+                    <% } else { %>
+                        <h2>No Article Present</h2>
+                        <% } %>
+    </div>
+
+</body>
+
+</html>

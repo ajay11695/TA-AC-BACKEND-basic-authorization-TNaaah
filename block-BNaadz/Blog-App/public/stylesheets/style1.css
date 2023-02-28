@@ -1,0 +1,138 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ******** */
+body{
+  background-color: rgb(219, 197, 169);
+}
+
+a{
+  text-decoration: none;
+}
+
+.container{
+  /* max-width: 400px; */
+  width: 400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.f-weight{
+  font-weight: 700;
+}
+
+.textalign{
+  text-align: center;
+}
+
+.margin-t-30{
+  margin-top: 2rem;
+}
+
+.font-red-400{
+  color: red;
+  font-weight: 400;
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+
+/* button */
+.btn{
+  padding: 10px 20px;
+  background-color: rgb(184, 140, 226);
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0px 0px 10px rgb(91, 7, 169);
+}
+
+.btn-2{
+  padding: 10px 40px;
+  margin-left: 10px;
+}
+
+/* ***header */
+header{
+  padding: 10px 20px;
+  background-color: rgb(126, 126, 219);
+}
+
+.nav{
+  width: 20%;
+}
+
+/* **form */
+.form-user{
+  margin-top: 8rem;
+  padding: 30px;
+  background-color: rgb(209, 166, 232);
+  border-radius: 0 4rem 0 4rem;
+  box-shadow: 0px 0px 10px rgb(176, 49, 245);
+}
+
+.formInput{
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: none;
+}
+
+h1{
+  font-size: 30px;
+  margin-bottom: 20px;
+}

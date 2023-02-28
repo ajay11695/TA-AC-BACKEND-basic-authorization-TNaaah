@@ -1,0 +1,167 @@
+
+
+body{
+  background-color: rgb(236, 238, 240);
+  margin: 0;
+}
+
+header{
+  background-color: rgb(230, 207, 180);
+  margin: 0;
+  padding: 0 20px;
+}
+
+h1{
+  margin: 10px 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+.bg{
+  background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('../images/scott-graham-5fNmWej4tAA-unsplash.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.container1{
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.textalign{
+  text-align: center;
+}
+
+.flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-1{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 60vh;
+}
+
+.btn,.submit{
+  background-color: rgb(16, 125, 87);
+  color: black;
+  padding: 8px 20px;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 5px;
+}
+
+form{
+  padding: 20px;
+  box-shadow: 0px 0px 10px white;
+  background-color: white;
+  margin-top: 50px;
+}
+
+.form-comment{
+  width: 20%;
+}
+
+
+
+.formInput{
+  width: 100%;
+  margin-bottom: 20px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.comment-input{
+  width: 100%;
+  margin-bottom: 5px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+textarea{
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.textarea-comment{
+  margin-bottom: 0px;
+}
+
+.margin-0{
+  margin: 0;
+}
+.margin-t-10{
+  margin-top: 10px;
+}
+
+.margin-b-20{
+  margin-bottom: 20px;
+  font-size: 5rem;
+}
+
+.margin-l-20{
+  margin-right: 20px;
+}
+
+.white{
+  color: white;
+}
+ 
+span{
+  color: red;
+  border-radius: 5px;
+  background-color: aqua;
+  padding: 5px 15px;
+  margin-right: 5px;
+}
+
+.btn-like{
+  background-color: black;
+  color: white;
+}
+
+.btn-delete{
+  background-color: red;
+}
+
+.btn-2{
+  padding: 0 10px;
+}
+
+.h-t2{
+  color: rgb(5, 101, 74);
+}
+
+.h-title{
+  color: cornflowerblue;
+}
+
+h4{
+  color: blue;
+}
+
+p{
+  color: rgb(103, 81, 58);
+  font-style: italic;
+}
+
+h3{
+  color: cornflowerblue;
+}

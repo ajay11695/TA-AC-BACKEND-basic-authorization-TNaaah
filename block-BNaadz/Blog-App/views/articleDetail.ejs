@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <header>
+        <div class="flex">
+            <a href="/">
+                <h1>Home</h1>
+            </a>
+            <div>
+                <% if(user){ %>
+                    <a class="margin-l-20" href="">Welcome To <%= user.name %></a>
+                    <a class="btn" href="/users/logout">Log out</a>
+                    <a class="btn" href="/articles">Back</a>
+                    <% } %>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <% if(user){ %>
+            <div>
+                <h1 class="h-t2">
+                    <%= articleDetail.title %>
+                </h1>
+                <h3>
+                    <%= articleDetail.author.name %>
+                </h3>
+
+                <% articleDetail.tags.forEach(tag=>{ %>
+                    <span>
+                        <%= tag %>
+                    </span>
+                    <% }) %>
+
+                        <p>
+                            <%= articleDetail.description %>
+                        </p>
+
+                        <!-- buttons -->
+                        <div style="margin:0px 0px 30px 0px;">
+                            <a href="">
+                                <%= articleDetail.likes %>
+                            </a>
+                            <a href="/articles/<%= articleDetail._id %>/likes">👍</a>
+                            <a href="">
+                                <%= articleDetail.dislikes %>
+                            </a>
+                            <a href="/articles/<%= articleDetail._id %>/dislikes">👎</a>
+                        </div>
+                        <a class="btn" href="/articles/<%= articleDetail._id %>/edit">Edit</a>
+                        <a class="btn btn-delete" href="/articles/<%= articleDetail._id %>/delete">Delete</a>
+            </div>
+
+            <!--  comments -->
+
+            <form action="/articles/<%= articleDetail._id %>/comments" method="POST" class="form-comment">
+                <textarea name="content" id="" cols="" rows="3" class="textarea-comment" placeholder="Enter comment">
+
+            </textarea>
+                <input type="text" name="author" placeholder="Enter author name" class="comment-input">
+                <div>
+                    <input class="btn btn-2" type="submit" value="Add comment">
+                </div>
+            </form>
+            <h2>Comments</h2>
+            <hr>
+
+            <% articleDetail.comments.forEach(comment=>{ %>
+                <p class="margin-0">
+                    <%= comment.content %>
+                </p>
+                <h4 class="margin-0">Author:<%= comment.author %>
+                </h4>
+                <div class="margin-t-10">
+                    <a href="">
+                        <%= comment.likes %>
+                    </a>
+                    <a href="/comments/<%= comment._id %>/likes">👍</a>
+                    <a href="">
+                        <%= comment.dislikes %>
+                    </a>
+                    <a href="/comments/<%= comment._id %>/dislikes">👎</a>
+                    <a class="btn btn-2" href="/comments/<%= comment._id %>/edit">Edit</a>
+                    <a class="btn btn-delete btn-2" href="/comments/<%= comment._id %>/delete">Delete</a>
+                </div>
+
+                <hr>
+                <% }) %>
+
+                    <!-- no login user -->
+                    <% } else { %>
+                        <h1 class="h-t2">
+                            <%= articleDetail.title %>
+                        </h1>
+                        <h3>
+                            <%= articleDetail.author.name %>
+                        </h3>
+
+                        <% articleDetail.tags.forEach(tag=>{ %>
+                            <span>
+                                <%= tag %>
+                            </span>
+                            <% }) %>
+
+                                <p>
+                                    <%= articleDetail.description %>
+                                </p>
+
+
+                                <% } %>
+    </div>
+</body>
+
+</html>

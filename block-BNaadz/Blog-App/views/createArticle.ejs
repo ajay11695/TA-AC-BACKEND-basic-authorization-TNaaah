@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <header>
+        <div class="flex header">
+            <a href="/"><h1>Home</h1></a>
+           <div>
+            <a class="margin-l-20" href="">Welcome to <%= user.name %></a>
+            <a class="btn" href="/users/logout">Log out</a>
+            <a class="btn" href="/articles/new">Add Article</a>
+           </div>
+        </div>
+    </header>
+    <h1 class="textalign">Add Article</h1>
+   <div class="container1">
+    <form action="/articles" method="POST">
+        <input class="formInput" type="text" name="title" placeholder="Enter title">
+        <textarea  name="description" id="" cols="" rows="6" placeholder="add description"></textarea>
+        <input class="formInput" type="text" name="tags" placeholder="Enter tags">
+        <div class="textalign">
+        <input class="submit" type="submit" name="" value="add article">
+        </div>
+    </form>
+   </div>    
+  </body>
+
+  </html>

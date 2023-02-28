@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <header>
+        <div class="flex header">
+            <a href="/"><h1>Home</h1></a>
+           <div>
+            <a href=""><%= user.name %></a>
+            <a class="btn" href="/users/logout">Log out/a>
+           </div>
+        </div>
+    </header>
+    <div class="container1 textalign">
+        <form  action="/comments/<%= comment.id %>" method="POST" class="">
+           <h2>Update Comment</h2>
+            <textarea name="content" id="" cols="" rows="5" class="textarea-comment" placeholder="Enter comment">
+            <%= comment.content %>
+            </textarea>
+            <div>
+                <input class="btn btn-2" type="submit" value="Update comment">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
