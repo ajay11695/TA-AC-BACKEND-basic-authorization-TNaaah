@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <header>
+        <div class="flex header">
+            <a href="/">
+                <h1 class="font-30">Home</h1>
+            </a>
+            <div>
+                <a href="">WELCOME: <%= user.name %></a>
+                <a class="btn" href="/users/logout">Log out</a>
+                <a class="btn" href="/admin/new">Add Product</a>
+            </div>
+        </div>
+    </header>
+    <!-- search bar -->
+    <h1 class="textalign font-30 margin-tb-10">Admin Dashboard</h1>
+    <form action="/admin/category" method="POST" class="textalign">
+        <select name="category" id="" class="search">
+            <option value="All">All</option>
+            <option value="Mobile">Mobile</option>
+            <option value="Headphone">Headphone</option>
+            <option value="earphone">earphone</option>
+            <option value="Speaker">Speaker</option>
+            <option value="Trimmer">Trimmer</option>
+        </select>
+        <input type="submit" value="🔍" class="search">
+      </form>
+    <hr>
+    <div class="flex-2">
+        <!-- user list -->
+        <div class=" user-div">
+            <h1 class=" font-30 margin-b-20 textalign ">User List</h1>
+           <% users.forEach(user=>{ %>
+             
+                <div class="margin-b-20">
+                    <a class="font-20"><%= user.name %></a>
+                    <a class="btn btn-2" href="/admin/<%= user._id %>/block">block</a>
+                    <a class="btn btn-2" href="/admin/<%= user._id %>/unblock">unblock</a>
+                   </div>
+              
+               
+           <% }) %>
+        </div>
+        <!-- list of product -->
+        <div class="product-div">
+            <h2 class="textalign font-30 margin-tb-10">List Of Product</h2>
+            <div class=" flex wrap ">
+
+                <% if(products.length) { %>
+                    <% products.forEach(product=>{ %>
+                        <section class=" p-div">
+                            <figure class="list-figure">
+                                <img src="/images/<%= product.image %>" alt="<%= product.productName %>">
+                            </figure>
+                            <a href="/admin/<%= product._id %>">
+                                <h1 class="font-20 margin-tb-10">
+                                    <%= product.productName %>
+                                </h1>
+                            </a>
+                            <p>Quantity:<%= product.quantity %>
+                            </p>
+                            <h2 class="margin-t-10 margin-b-20">Price:<%= product.price %>/-</h2>
+    
+                        </section>
+    
+                        <% }) %>
+    
+                            <% } else { %>
+                                <h2>No Product Found</h2>
+                                <% } %>
+            </div>
+        </div>
+       
+    </div>
+
+</body>
+
+</html>

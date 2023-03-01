@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <header>
+        <div class="flex header">
+            <a href="/">
+                <h1 class="font-30">Home</h1>
+            </a>
+            <% if(user ){  %>
+                <div>
+                 <a class="margin-l-20" href="">Welcome to <%= user.name %></a>
+                 <a class="btn" href="/users/logout">Log out</a>
+                 <a class="btn" href="/users/cart">Cart</a>
+                </div>
+               <% }else{ %>
+                 <div>
+                   <a class="btn" href="/users/login">Log in</a>
+                   <a class="btn" href="/users/registration">register</a>
+                   </div>
+               <% } %>
+        </div>
+    </header>
+    <!-- search bar -->
+      <form action="/users/category" method="POST" class="textalign">
+        <select name="category" id="" class="search  ">
+            <option value="All">All</option>
+            <option value="Mobile">Mobile</option>
+            <option value="Headphone">Headphone</option>
+            <option value="earphone">earphone</option>
+            <option value="Speaker">Speaker</option>
+            <option value="Trimmer">Trimmer</option>
+        </select>
+        <input type="submit" value="🔍" class="search">
+      </form>
+      <!-- list of product -->
+    <h1 class="textalign font-30 margin-tb-10">List Of Product</h1>
+    <div class="container flex wrap">
+
+        <% if(products.length) { %>
+          
+            <% products.forEach(product=>{ %>
+                <section class=" p-div">
+                    <figure class="list-figure">
+                        <img src="/images/<%= product.image %>" alt="<%= product.productName %>">
+                    </figure>
+                    <a href="/users/<%= product._id %>">
+                        <h1 class="margin-tb-10 font-20">
+                            <%= product.productName %>
+                        </h1>
+                    </a>
+                    <p>Quantity:<%= product.quantity %>
+                    </p>
+                    <h2 class="margin-t-10 margin-b-20 ">Price:<%= product.price %>/-</h2>
+                </section>
+                <% }) %>
+
+                    <% } else { %>
+                        <h2>No Product Found</h2>
+                        <% } %>
+    </div>
+
+</body>
+
+</html>

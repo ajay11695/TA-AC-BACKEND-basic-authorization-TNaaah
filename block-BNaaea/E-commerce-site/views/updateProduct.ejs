@@ -1,0 +1,43 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <header>
+        <div class="flex header">
+            <a href="/">
+                <h1 class="font-30">Home</h1>
+            </a>
+            <div>
+                <a  href="">WELCOME: <%= user.name %></a>
+                <a class="btn" href="/admin/<%= product._id %>">Back</a>
+            </div>
+        </div>
+    </header>
+    <div class="container1">
+        <form action="/admin/<%= product._id %>" method="POST"  enctype="multipart/form-data" class="form-product">
+        <h1 class="textalign font-20 margin-tb-10">Update Product</h1>
+        <input class="formInput" type="text" name="productName" placeholder="Enter productName" value="<%= product.productName %>">
+        <input class="formInput" type="number" name="quantity" placeholder="Enter quantity"  value="<%= product.quantity %>">
+        <input class="formInput" type="number" name="price" placeholder="Enter price" value="<%= product.price %>">
+        <input class="formInput" type="text" name="category" placeholder="Enter category" value="<%= product.category %>">
+        <input class="formInput" type="file" name="image" id="image">
+        <input class="formInput" type="hidden" name="image" value="<%= product.image %>">
+        <div class="textalign">
+        <input class="btn btn-1" type="submit" value="update Product">
+        </div>
+    </form>
+   </div>
+
+  </body>
+
+  </html>

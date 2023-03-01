@@ -1,0 +1,17 @@
+<%- include('partial/header') -%>
+
+   <div class="container">
+    <form action="/users/login" method="POST" class="form-user">
+        <h1 class="f-weight textalign">User Login</h1>
+        <% if(error){ %>
+            <p class="font-red-400"><%= error %></p>
+        <% } %>
+        <input class="formInput" type="email" name="email" placeholder="Enter email...">
+        <input class="formInput" type="password" name="password" placeholder="Enter password...">
+        <div class="textalign">
+            <input class="btn f-weight" type="submit" value="LOGIN">
+        </div>
+    </form>
+   </div>
+
+<%- include('partial/footer') -%>

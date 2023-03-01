@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <header>
+        <div class="flex">
+            <a href="/">
+                <h1 class="font-30">Home</h1>
+            </a>
+            <div>
+               <% if(user){ %>
+                    <a class="" href="/users/logout">Welcome to <%= user.name %></a>
+                    <a class="btn" href="/">Log out</a>
+               <% } %>
+            <a class="btn" href="/admin">Back</a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+
+        <div class="margin-tb-10">
+            <figure class="figure">
+                <img src="/images/<%= product.image %>" alt="<%= product.productName %>">
+            </figure>
+            <h1 class="font-20 margin-tb-10">
+                <%= product.productName %>
+            </h1>
+            <p >
+                Quantity:<%= product.quantity %>
+            </p>
+                    <h2 class="margin-t-10">
+                       Price: <%= product.price %>/-
+                    </h2>
+
+                    <!-- buttons -->
+                    <div class="margin-t-10 margin-b-20">
+                        <a href=""> <%= product.likes %></a>
+                        <a  href="/users/<%= product._id %>/likes">👍</a>
+                        <a href=""> <%= product.dislikes %></a>
+                        <a  href="/users/<%= product._id %>/dislikes">👎</a>
+                    </div>
+                    <div class="margin-t-10">
+                        <a class="btn" href="/users/<%= product._id %>/buy">Buy now</a>
+                        <a class="btn btn-delete" href="/users/<%= product._id %>/cart">Add to cart</a>
+                    </div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>

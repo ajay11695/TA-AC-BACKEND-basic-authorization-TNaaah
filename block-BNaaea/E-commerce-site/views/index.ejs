@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body class="bg">
+    <header>
+        <div class="flex header">
+            <a href="/"><h1 class="font-30">E-COMMERCE</h1></a>
+            <% if(user ){  %>
+              <div>
+               <a class="margin-l-20" href="">Welcome to <%= user.name %></a>
+               <a class="btn" href="/users/logout">Log out</a>
+              </div>
+             <% }else{ %>
+               <div>
+                 <a class="btn" href="/users/login">Log in</a>
+                 <a class="btn" href="/users/registration">register</a>
+                 </div>
+             <% } %>
+        </div>
+    </header>
+
+  <div class="textalign flex-1">
+    <h1 class="margin-b-20 white font-50">e-commerce</h1>
+    <a class="btn white" href="/admin">Go To Products</a>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <header>
+        <div class="flex">
+            <a href="/">
+                <h1 class="font-30">Home</h1>
+            </a>
+            <div>
+                <a href="">
+                    <%= user.name %>
+                </a>
+                <a class="btn" href="/users/logout">Log out</a>
+                <a class="btn" href="/users">Back</a>
+            </div>
+        </div>
+    </header>
+    <h1 class="textalign font-30">Cart</h1>
+
+    <div class="container ">
+        <% if(user.cart.length) { %>
+        
+            <% user.cart.forEach(product=>{ %>
+                <section class=" p-div margin-tb-10">
+                    <figure class="list-figure">
+                        <img src="/images/<%= product.image %>" alt="<%= product.productName %>">
+                    </figure>
+                    <a href="/users/<%= product._id %>">
+                        <h1 class="font-20 margin-tb-10">
+                            <%= product.productName %>
+                        </h1>
+                    </a>
+                    <p>Quantity:<%= product.quantity %>
+                    </p>
+                    <h2 class="margin-t-10 margin-b-20">Price:<%= product.price %>/-</h2>
+                    <a class="btn" href="/users/<%= product._id %>/buy">Buy now</a>
+                    <a class="btn btn-delete" href="/users/<%= product._id %>/remove">Remove</a>
+                    <hr class="margin-30">
+                </section>
+
+                <% }) %>
+
+                    <% } else { %>
+                        <h2>No Product Found</h2>
+                        <% } %>
+    </div>
+
+</body>
+
+</html>
