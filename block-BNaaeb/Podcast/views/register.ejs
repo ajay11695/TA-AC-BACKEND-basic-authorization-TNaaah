@@ -1,0 +1,23 @@
+<%- include('partial/header') -%>
+<main class="container1">
+    <form action="/users/registration" method="POST" class="form">
+        <h1 class="text-align font-20-light f-weight margin-b-20">Registration</h1>
+        <% if(error){ %>
+            <p class=""><%= error %></p>
+        <% } %>
+        <input class="formInput margin-b-20" type="text" name="name" placeholder="Enter name...">
+        <input class="formInput margin-b-20" type="email" name="email" placeholder="Enter email...">
+        <input class="formInput margin-b-20" type="password" name="password" placeholder="Enter password...">
+        <input class="formInput margin-b-20" type="text" name="city" placeholder="Enter city...">
+       <select class="formInput margin-b-20" name="subcription" id="">
+        <option value="Free">Free</option>
+        <option value="VIP">VIP</option>
+        <option value="Premium">Premium</option>
+       </select>
+        <div class="text-align">
+            <input class="btn" type="submit" name="" id="" value="Register">
+        </div>
+    </form>
+</main>
+
+<%- include('partial/footer') -%>

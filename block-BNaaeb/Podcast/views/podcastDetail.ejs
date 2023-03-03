@@ -1,0 +1,40 @@
+<%- include('partial/header') -%>
+   <div>
+     <section class="container flex flex-start text-align detailPodcast ">
+        <div class="figure">
+            <figure><img src="/images/<%= podcast.image %>" alt=""></figure>
+        </div>
+        <div class="align-start">
+            <h1 class="font-30-blue f-weight margin-b-20 margin-10">
+                <%= podcast.title %>
+            </h1>
+            <h1 class="font-20-light f-weight margin-b-20">
+                <%= podcast.author %>
+            </h1>
+            <h1 class="font-20-light  margin-b-20">
+                Subcription: <%= podcast.subcription %>
+            </h1>
+            
+            <audio class="margin-b-20" src="/images/<%= podcast.audio %>" controls>
+                <source src="/podcast/<%=podcast.audio%>" type="audio/mpeg">
+            </audio>
+              <div class="margin-b-20">
+                <a class="font-20-light" href=""><%= podcast.likes %></a>
+                <a class="font-20-light" href="/Podcast/<%= podcast._id%>/likes">👍</a>
+                <a class="font-20-light" href=""><%= podcast.dislikes %></a>
+                <a class="font-20-light" href="/Podcast/<%= podcast._id%>/dislikes">👎</a>
+              </div>
+            <% if(user){ %>
+                <% if(user.isAdmin){ %>
+                <div>
+                    <a class="btn" href="/Podcast/<%= podcast._id%>/edit">Edit</a>
+                    <a class="btn" href="/Podcast/<%= podcast._id%>/delete">Delete</a>
+                </div>
+              <%  } %>
+              <%  } %>
+        </div>
+       
+    </section>
+   </div>
+   
+    <%- include('partial/footer') -%>

@@ -1,0 +1,211 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* *********** */
+body{
+  background-color: rgb(187, 195, 211);
+}
+
+header{
+  background-color: rgb(165, 192, 243);
+  padding: 10px 20px;
+}
+
+a{
+  text-decoration: none;
+  display: inline-block;
+}
+
+img{
+  width: 100%;
+  height: 200px;
+}
+
+.figure{
+  width: 45%;
+}
+
+.container{
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.container1{
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.text-align{
+  text-align: center;
+}
+/* flex */
+.flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-1{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 60vh;
+}
+
+.flex-start{
+  justify-content: space-around;
+}
+
+.align-start{
+  align-self: flex-start;
+}
+
+/* **font*** */
+.f-weight{
+  font-weight: 700;
+}
+
+.font-40-blue{
+  font-size: 40px;
+  color: rgb(218, 184, 122);
+}
+
+.font-30-blue{
+  font-size: 30px;
+  color: blue;
+}
+
+.font-20-light{
+  font-size: 20px;
+  color: rgb(62, 38, 62);
+}
+
+.font-50-red-l{
+  font-size: 60px;
+  color: rgb(226, 104, 104);
+  letter-spacing: 10px;
+}
+
+/* margin */
+.margin-b-20{
+  margin-bottom: 20px;
+}
+
+.margin-10{
+  margin: 10px 0;
+}
+
+.margin-r-20{
+  margin-right: 20px ;
+}
+
+
+
+/* **button */
+.btn{
+  background-color: rgb(72, 90, 54);
+  padding: 7px 20px;
+  border-radius: 10px;
+  color: white;
+}
+
+/* section */
+section{
+  border-radius: 10px;
+  background-color: rgb(179, 179, 232);
+  padding: 5px 0;
+  box-shadow: 0px 0px 5px rgb(125, 125, 236);
+}
+
+.detailPodcast img{
+  height: 300px;
+}
+
+.detailPodcast ,.form{
+  margin-top: 5rem;
+}
+
+/* form */
+.subInput{
+  width: 200px;
+  height: 30px;
+}
+
+.subWidth{
+  width: 30%;
+}
+
+.form{
+  padding: 20px;
+  background-color: aliceblue;
+  box-shadow: 0px 0px 5px aliceblue;
+}
+
+.formInput{
+  width: 100%;
+  height: 35px;
+  box-sizing: border-box;
+}
+
+/* nav */
+
+ul{
+  position:absolute;
+  padding: 10px;
+  background-color: white;
+  top: 50px;
+  right: 40px;
+  border-radius: 10px;
+  display: none;
+}
+
+.Profile:hover ~ ul{
+  display: block;
+}

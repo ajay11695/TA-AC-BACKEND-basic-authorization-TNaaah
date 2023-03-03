@@ -1,0 +1,23 @@
+<%- include('partial/header') -%>
+   <main class="container1">
+    <form action="/Podcast" method="POST" enctype="multipart/form-data" class="form">
+        <h1 class="text-align font-20-light f-weight margin-b-20">Add Podcast</h1>
+        <input class="formInput margin-b-20" type="text" name="title" placeholder="Enter title...">
+        <input class="formInput margin-b-20" type="text" name="author" placeholder="Enter author...">
+        <select class="formInput margin-b-20" name="subcription" id="">
+            <option value="Free">Free</option>
+            <option value="VIP">VIP</option>
+            <option value="Premium">Premium</option>
+        </select>
+        <h1 class="text-align font-20-light f-weight margin-b-20">Audio</h1>
+        <input class="formInput" type="file" name="audio">
+        <h1 class="text-align font-20-light f-weight margin-b-20">Image</h1>
+        <input class="formInput" type="file" name="image">
+        </select>
+        <div class="text-align">
+            <input class="btn" type="submit" name="" id="" value="Add podcast">
+        </div>
+    </form>
+
+   </main>
+    <%- include('partial/footer') -%>

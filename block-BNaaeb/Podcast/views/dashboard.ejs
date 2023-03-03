@@ -1,0 +1,59 @@
+<%- include('partial/header') -%>
+
+  <main class="container">
+    <% if(user){ %>
+      <% if(user.isAdmin){ %>
+        <h1 class="font-40-blue f-weight text-align margin-10">Admin Dashboard</h1>
+        <% } %>
+          <% } %>
+            <h1 class="font-30-blue f-weight text-align margin-10">List Of Podcats</h1>
+            <hr>
+            <div class="flex">
+              <!-- for subcription -->
+              <% if(user){ %>
+                <% if(!user.isAdmin){ %>
+                  <div class="align-start text-align subWidth">
+                    <h1 class="font-20-light f-weight margin-b-20">User Update Subcription</h1>
+                    <form action="/users/subcription" method="POST">
+                      <select name="subcription" id="" class="subInput margin-b-20">
+                        <option value="Free">Free</option>
+                        <option value="VIP">VIP</option>
+                        <option value="Premium">Premium</option>
+                      </select>
+                      <div>
+                        <input class="btn" type="submit" name="" id="" value="Update Subcription">
+                      </div>
+                    </form>
+                  </div>
+                  <% } %>
+                    <% } %>
+                    <!-- List Of podcast -->
+                      <div class="text-align container">
+
+                        <% podcasts.forEach(podcast=>{ %>
+                          <section class="flex flex-start margin-b-20">
+                            <div class="figure">
+                              <figure ><img src="/images/<%= podcast.image %>" alt=""></figure>
+                            </div>
+                            <div >
+                              <a href="/Podcast/<%= podcast._id %>">
+                                <h1 class="margin-b-20 font-30-blue">
+                                  <%= podcast.title %>
+                                </h1>
+                              </a>
+                              <h1 class="font-20-light margin-b-20 f-weight">
+                                Subcription: <%= podcast.subcription %>
+                              </h1>
+                              <div>
+                                <audio controls>
+                                  <source src="/images/<%= podcast.audio %>" type="audio/mpeg">
+                                </audio>
+                              </div>
+                            </div>
+                          </section>
+                          <% }) %>
+                      </div>
+            </div>
+  </main>
+
+  <%- include('partial/footer') -%>

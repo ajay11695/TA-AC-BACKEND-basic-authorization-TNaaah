@@ -1,0 +1,25 @@
+<%- include('partial/header') -%>
+   <main class="container1">
+    <form action="/Podcast/<%= podcast._id %>" method="POST" enctype="multipart/form-data" class="form">
+        <h1 class="text-align font-20-light f-weight margin-b-20">Update Podcast</h1>
+        <input class="formInput margin-b-20" type="text" name="title" placeholder="Enter title..." value="<%= podcast.title %>">
+        <input class="formInput margin-b-20" type="text" name="author" placeholder="Enter author..." value="<%= podcast.author %>">
+        <select class="formInput margin-b-20"  name="subcription" id="" value="<%= podcast.subcription %>">
+            <option value="Free">Free</option>
+            <option value="VIP">VIP</option>
+            <option value="Premium">Premium</option>
+        </select>
+        <h1 class="text-align font-20-light f-weight margin-b-20">Audio</h1>
+        <input class="formInput" type="file" name="audio">
+        <input type="hidden" name="audio" value="<%= podcast.audio %>">
+        <h1 class="text-align font-20-light f-weight margin-b-20">Image</h1>
+        <input class="formInput" type="file" name="image">
+        <input type="hidden" name="image" value="<%= podcast.image %>">
+        </select>
+        <div class="text-align">
+            <input class="btn" type="submit" name="" id="" value="Update podcast">
+        </div>
+    </form>
+   </main>
+
+    <%- include('partial/footer') -%>
